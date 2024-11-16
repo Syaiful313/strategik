@@ -84,19 +84,19 @@ const Footer = () => {
                 Services
               </Link>
               <Link
-                href="/social-media"
+                href="/services/social-media"
                 className="block text-sm text-white hover:text-[#e33a07]"
               >
                 Social Media
               </Link>
               <Link
-                href="/e-commerce"
+                href="/services/e-commerce"
                 className="block text-sm text-white hover:text-[#e33a07]"
               >
                 E-commerce
               </Link>
               <Link
-                href="/websites"
+                href="/services/websites"
                 className="block text-sm text-white hover:text-[#e33a07]"
               >
                 Websites

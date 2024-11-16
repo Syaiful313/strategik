@@ -14,7 +14,7 @@ const page = () => {
     const fetchTeamData = async () => {
       try {
         const response = await axios.get(
-          "https://randomuser.me/api/?results=5",
+          "https://randomuser.me/api/?results=6",
         );
         setTeamMembers(response.data.results);
       } catch (error) {
@@ -31,6 +31,7 @@ const page = () => {
     "Marketing Strategist",
     "Social Media Maven",
     "Creative Content Catalyst",
+    "Analytics Architect"
   ];
 
   return (
@@ -60,8 +61,8 @@ const page = () => {
               </div>
             ))}
           </div>
-          <div className="team-grid mt-6 grid grid-cols-2 gap-6 text-white">
-            {teamMembers.slice(3, 5).map((member, index) => (
+          <div className="team-grid mt-8 grid grid-cols-3 gap-6 text-white">
+            {teamMembers.slice(3, 6).map((member, index) => (
               <div
                 key={index}
                 className="team-member rounded-md bg-[#2a2a2a] p-4"

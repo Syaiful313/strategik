@@ -6,6 +6,7 @@ import Marquee from "../components/Marquee";
 import Image from "next/image";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 
 const page = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
@@ -14,7 +15,7 @@ const page = () => {
     const fetchTeamData = async () => {
       try {
         const response = await axios.get(
-          "https://randomuser.me/api/?results=5",
+          "https://randomuser.me/api/?results=6",
         );
         setTeamMembers(response.data.results);
       } catch (error) {
@@ -26,9 +27,9 @@ const page = () => {
   }, []);
 
   const services = [
-    { title: "SOCIAL MEDIA", href: "#" },
-    { title: "E-COMMERCE", href: "#" },
-    { title: "WEBSITES", href: "#" },
+    { title: "SOCIAL MEDIA", href: "/services/social-media" },
+    { title: "E-COMMERCE", href: "/services/e-commerce" },
+    { title: "WEBSITES", href: "/services/websites" },
   ];
 
   const customDescriptions = [
@@ -42,7 +43,7 @@ const page = () => {
   return (
     <>
       <Navbar />
-      <div className="bg-[#1A1A1A]">
+      <section className="bg-[#1A1A1A]">
         <div className="mx-5 min-h-screen bg-[#1A1A1A] p-4 text-white">
           <div className="relative mx-auto flex max-w-6xl pb-20 pt-10">
             <h1 className="text-5xl font-bold md:text-9xl">About</h1>
@@ -59,14 +60,17 @@ const page = () => {
 
               <div className="space-y-0">
                 {services.map((service) => (
+                  <Link href={service.href}>
+
                   <div
                     key={service.title}
                     className="cursor-pointer p-0 transition-colors hover:text-[#e33a07] md:p-2"
-                  >
+                    >
                     <h2 className="text-xl font-bold md:text-2xl">
                       {service.title}
                     </h2>
                   </div>
+                    </Link>
                 ))}
 
                 <div className="mb-0 p-0 pt-4 md:p-4">
@@ -85,9 +89,9 @@ const page = () => {
           <div>
             <div className="mx-auto flex max-w-6xl flex-col">
               <div className="relative mt-10 flex">
-                <h2 className="text-2xl md:text-4xl">Our Story</h2>
+                <h2 className="text-3xl md:text-4xl">Our Story</h2>
               </div>
-              <div className="mt-3 grid w-full grid-cols-1 gap-6 text-sm md:w-[60%] md:text-2xl">
+              <div className="text-md mt-3 grid w-full grid-cols-1 gap-6 md:w-[60%] md:text-2xl">
                 <p>
                   In a world buzzing with digital noise, we understand the
                   importance of standing out. Our mission is simple yet powerful
@@ -102,13 +106,19 @@ const page = () => {
                   on this exciting journey. Let's not just meet expectations but
                   exceed them, together.
                 </p>
-                <p className="text-md font-bold md:text-2xl">
+                <p className="text-lg font-bold md:text-2xl">
                   Welcome to Strategik – where your brand's success is not just
                   a goal; it's a commitment.
                 </p>
               </div>
               <div className="mb-8 mt-4 w-[60%]">
-                <img src="/assets/earphone.avif" alt="earphone" className="" />
+                <Image
+                  src="/assets/earphone.avif"
+                  alt="earphone"
+                  height={500}
+                  width={600}
+                  className=""
+                />
               </div>
             </div>
           </div>
@@ -139,8 +149,8 @@ const page = () => {
                 </div>
               ))}
             </div>
-            <div className="team-grid mt-6 grid grid-cols-2 gap-6 text-white">
-              {teamMembers.slice(3, 5).map((member, index) => (
+            <div className="team-grid mt-8 grid grid-cols-2 gap-6 text-white">
+              {teamMembers.slice(3, 6).map((member, index) => (
                 <div
                   key={index}
                   className="team-member rounded-md bg-[#2a2a2a] p-4"
@@ -163,7 +173,7 @@ const page = () => {
 
         <Marquee />
         <Footer />
-      </div>
+      </section>
     </>
   );
 };

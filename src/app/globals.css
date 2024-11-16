@@ -26,36 +26,51 @@
   height: 100px;
 }
 
-
-
 @keyframes marquee {
-    0% { transform: translateX(0%); }
-    100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0%);
   }
-  .animate-marquee {
-    animation: marquee 20s linear infinite;
+  100% {
+    transform: translateX(-100%);
   }
+}
+.animate-marquee {
+  animation: marquee 20s linear infinite;
+}
 
-  .circular-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 10rem; /* Ukuran lingkaran */
-    width: 10rem; /* Ukuran lingkaran */
+.circular-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem; /* Ukuran lingkaran */
+  width: 10rem; /* Ukuran lingkaran */
+}
+
+.circular-text {
+  position: absolute;
+  transition: transform 0.5s ease-in-out;
+}
+
+.circular-container:hover .circular-text {
+  transform: rotate(90deg);
+}
+
+.icon-center {
+  position: absolute;
+  color: #e33a07; /* Warna ikon */
+}
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.5s forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
   }
-  
-  .circular-text {
-    position: absolute;
-    transition: transform 0.5s ease-in-out;
+  100% {
+    opacity: 1;
   }
-  
-  .circular-container:hover .circular-text {
-    transform: rotate(90deg);
-  }
-  
-  .icon-center {
-    position: absolute;
-    color: #e33a07; /* Warna ikon */
-  }
-  
+}

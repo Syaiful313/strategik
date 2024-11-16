@@ -5,9 +5,11 @@ export const Navbar = () => {
   return (
     <nav className="border-gray-200 bg-black">
       <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
+        <Link href="/">
         <span className="self-center whitespace-nowrap text-3xl font-semibold md:text-5xl  dark:text-white">
           Strategik.
         </span>
+        </Link>
         <button
           data-collapse-toggle="navbar-default"
           type="button"
@@ -42,7 +44,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/"
-                className="block rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 Home
               </Link>
@@ -50,7 +52,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className="block rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 About
               </Link>
@@ -58,7 +60,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/services"
-                className="block rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 Services
               </Link>
@@ -66,7 +68,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/work"
-                className="block rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 Teams
               </Link>
@@ -74,7 +76,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/contact"
-                className="block rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 Contact
               </Link>
