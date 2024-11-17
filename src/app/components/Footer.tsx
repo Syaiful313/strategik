@@ -64,10 +64,10 @@ const Footer = () => {
                 About
               </Link>
               <Link
-                href="/work"
+                href="/team"
                 className="block text-sm text-white hover:text-[#e33a07]"
               >
-                Work
+                Teams
               </Link>
               <Link
                 href="/contact"

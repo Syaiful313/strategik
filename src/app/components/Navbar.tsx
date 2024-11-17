@@ -67,7 +67,7 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/work"
+                href="/team"
                 className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
               >
                 Teams
