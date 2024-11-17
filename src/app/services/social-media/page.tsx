@@ -1,15 +1,11 @@
 "use client";
 
-import Footer from "@/app/components/Footer";
-import { Navbar } from "@/app/components/Navbar";
-import React from "react";
 import Marquee from "@/app/components/Marquee";
 import Image from "next/image";
 
 const page = () => {
   return (
     <>
-      <Navbar />
       <div className="min-h-screen bg-[#1A1A1A] px-24 text-white">
         <div className="container mx-auto px-4 py-12">
           <h1 className="mx-16 mb-6 text-7xl font-bold md:text-8xl">
@@ -135,7 +131,6 @@ const page = () => {
       </div>
 
       <Marquee />
-      <Footer />
     </>
   );
 };
