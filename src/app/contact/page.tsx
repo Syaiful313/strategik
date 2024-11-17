@@ -6,7 +6,6 @@ import Footer from "../components/Footer";
 const page = () => {
   return (
     <>
-      <Navbar />
       <section className="py-12 bg-[#1A1A1A] text-white text-center">
         <div className="countainer mx-4 md:mx-auto max-w-6xl">
           <div>
@@ -47,7 +46,6 @@ const page = () => {
         </div>
       </section>
       <Marquee />
-      <Footer />
     </>
   );
 };

@@ -25,7 +25,7 @@ const page = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="flex items-center justify-center">
             <Image
-              src="/assets/about.avif"
+              src="/assets/About.avif"
               alt="Person"
               width={1340}
               height={600}

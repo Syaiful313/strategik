@@ -42,7 +42,6 @@ const page = () => {
 
   return (
     <>
-      <Navbar />
       <section className="bg-[#1A1A1A]">
         <div className="mx-5 min-h-screen bg-[#1A1A1A] p-4 text-white">
           <div className="relative mx-auto flex max-w-6xl pb-20 pt-10">
@@ -172,7 +171,6 @@ const page = () => {
         </section>
 
         <Marquee />
-        <Footer />
       </section>
     </>
   );

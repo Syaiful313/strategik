@@ -1,11 +1,9 @@
 "use client";
 
-import Footer from "../components/Footer";
-import { Navbar } from "../components/Navbar";
-import Marquee from "../components/Marquee";
-import { useEffect, useState } from "react";
 import axios from "axios";
 import Image from "next/image";
+import { useEffect, useState } from "react";
+import Marquee from "../components/Marquee";
 
 const page = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
@@ -36,7 +34,6 @@ const page = () => {
 
   return (
     <>
-      <Navbar />
       <section className="bg-[#1a1a1a]">
         <div className="teams-page mx-5 md:mx-auto min-h-screen max-w-7xl">
           <h1 className="mb-8 text-4xl md:mt-10 text-white md:text-8xl">
@@ -84,7 +81,6 @@ const page = () => {
       </section>
 
       <Marquee />
-      <Footer />
     </>
   );
 };

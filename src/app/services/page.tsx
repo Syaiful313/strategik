@@ -54,7 +54,6 @@ const page = () => {
 
   return (
     <>
-      <Navbar />
       <section className="bg-[#1A1A1A] py-12 text-white">
         <div className="container max-w-screen-md px-7 md:mx-auto md:max-w-screen-xl md:px-4">
           <h2 className="mb-20 text-5xl font-bold md:mb-32 md:text-9xl">
@@ -124,7 +123,6 @@ const page = () => {
         </div>
       </section>
       <Marquee />
-      <Footer />
     </>
   );
 };

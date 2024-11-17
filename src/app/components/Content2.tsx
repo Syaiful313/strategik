@@ -1,15 +1,5 @@
 'use client'
-import { useEffect, useState } from "react";
 
-// const ImageSection = () => {
-//   const [items, setItems] = useState([]);
-
-//   useEffect(() => {
-//     client
-//       .getEntries({ content_type: 'yourContentType' })
-//       .then((response) => setItems(response.items))
-//       .catch(console.error);
-//   }, []);
 
 const Content2 = () => {
   return (
@@ -60,23 +50,6 @@ const Content2 = () => {
             </div>
           ))}
         </div>
-
-{/* <div className="mx-10 mt-10 grid grid-cols-1 p-0 md:mt-0 md:grid-cols-2">
-      {items.map((item, index) => (
-        <div key={index} className="group relative">
-          <img
-            src={item.fields.image.fields.file.url}
-            alt={item.fields.title || `Display ${index + 1}`}
-            className="w-full object-cover transition duration-300 group-hover:blur-sm"
-          />
-          <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-            <p className="rounded bg-black bg-opacity-50 p-4 text-2xl font-bold text-white">
-              {item.fields.title || 'Sample Text'}
-            </p>
-          </div>
-        </div>
-      ))}
-    </div> */}
 
         <div className="mx-4 mb-0 flex flex-col justify-between gap-6 px-4 py-20 text-start md:mx-10 md:flex-row md:items-center md:px-10">
           <div className="flex-1">
