@@ -7,12 +7,10 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-    <Navbar/>
     <Content/>
     <Marquee/>
     <Content2/>
     <Marquee/>
-    <Footer/>
     </>
   );
 }
