@@ -1,7 +1,4 @@
-import React from "react";
-import { Navbar } from "../components/Navbar";
 import Marquee from "../components/Marquee";
-import Footer from "../components/Footer";
 
 const page = () => {
   return (

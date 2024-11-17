@@ -1,12 +1,10 @@
 "use client";
 
-import Footer from "../components/Footer";
-import { Navbar } from "../components/Navbar";
-import Marquee from "../components/Marquee";
-import Image from "next/image";
 import axios from "axios";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import Marquee from "../components/Marquee";
 
 const page = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);

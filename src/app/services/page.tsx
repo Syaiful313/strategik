@@ -1,9 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { PiArrowCircleRightFill } from "react-icons/pi";
-import Footer from "../components/Footer";
 import Marquee from "../components/Marquee";
-import { Navbar } from "../components/Navbar";
 
 
 const page = () => {

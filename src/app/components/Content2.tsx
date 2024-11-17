@@ -1,7 +1,10 @@
-'use client'
+"use client";
 
+import Image from "next/image";
+import Link from "next/link";
 
 const Content2 = () => {
+  
   return (
     <section className="bg-[#1A1A1A]">
       <div className="max-w-[100vw] bg-[#1A1A1A] p-4 text-white md:px-36 md:py-12">
@@ -35,18 +38,44 @@ const Content2 = () => {
         </div>
 
         <div className="mx-10 mt-10 grid grid-cols-1 p-0 md:mt-0 md:grid-cols-2">
-          {[...Array(4)].map((_, index) => (
+          {[
+            {
+              src: "/assets/laptop.avif",
+              text: "E-commerce Triumph for Artisan.io",
+              link: "/#",
+            },
+            {
+              src: "/assets/sosmed.avif",
+              text: "Social Media Magic for DevSprint",
+              link: "/#",
+            },
+            {
+              src: "/assets/earphone.avif",
+              text: "Digital Storefront Makeover for UrbanCraft",
+              link: "/#",
+            },
+            {
+              src: "/assets/kursi.avif",
+              text: "Customer Engagement for FreshHarvest",
+              link: "/#",
+            },
+          ].map((image, index) => (
             <div key={index} className="group relative">
-              <img
-                src="/assets/qqq.jpg"
-                alt={`Laptop display ${index + 1}`}
-                className="w-full object-cover transition duration-300 group-hover:blur-sm"
-              />
-              <div className="absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <p className="rounded bg-black bg-opacity-50 p-4 text-2xl font-bold text-white">
-                  Sample Text
-                </p>
-              </div>
+              <Link href={image.link}>
+                <Image
+                  src={image.src}
+                  alt={`Laptop display ${index + 1}`}
+                  layout="responsive"
+                  width={700}
+                  height={475}
+                  className="w-full object-cover transition duration-300"
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  <p className="rounded bg-opacity-50 p-4 text-3xl text-white">
+                    {image.text}
+                  </p>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -73,6 +102,9 @@ const Content2 = () => {
         </div>
       </div>
     </section>
+    
+    
+    
   );
 };
 

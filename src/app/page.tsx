@@ -1,8 +1,6 @@
-import { Navbar } from "./components/Navbar";
 import Content from "./components/Content";
-import Marquee from "./components/Marquee";
 import Content2 from "./components/Content2";
-import Footer from "./components/Footer";
+import Marquee from "./components/Marquee";
 
 export default function Home() {
   return (
