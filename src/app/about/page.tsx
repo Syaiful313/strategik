@@ -58,16 +58,15 @@ const page = () => {
               <div className="space-y-0">
                 {services.map((service) => (
                   <Link href={service.href}>
-
-                  <div
-                    key={service.title}
-                    className="cursor-pointer p-0 transition-colors hover:text-[#e33a07] md:p-2"
+                    <div
+                      key={service.title}
+                      className="cursor-pointer p-0 transition-colors hover:text-[#e33a07] md:p-2"
                     >
-                    <h2 className="text-xl font-bold md:text-2xl">
-                      {service.title}
-                    </h2>
-                  </div>
-                    </Link>
+                      <h2 className="text-xl font-bold md:text-2xl">
+                        {service.title}
+                      </h2>
+                    </div>
+                  </Link>
                 ))}
 
                 <div className="mb-0 p-0 pt-4 md:p-4">
@@ -167,8 +166,6 @@ const page = () => {
             </div>
           </div>
         </section>
-
-        <Marquee />
       </section>
     </>
   );

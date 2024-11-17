@@ -5,10 +5,9 @@ import Marquee from "./components/Marquee";
 export default function Home() {
   return (
     <>
-    <Content/>
-    <Marquee/>
-    <Content2/>
-    <Marquee/>
+      <Content />
+      <Marquee />
+      <Content2 />
     </>
   );
 }

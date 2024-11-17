@@ -1,4 +1,3 @@
-import Marquee from "../components/Marquee";
 
 const page = () => {
   return (
@@ -42,7 +41,6 @@ const page = () => {
           </form>
         </div>
       </section>
-      <Marquee />
     </>
   );
 };

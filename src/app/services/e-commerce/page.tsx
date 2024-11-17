@@ -1,6 +1,5 @@
 "use client";
 
-import Marquee from "@/app/components/Marquee";
 import Image from "next/image";
 
 const page = () => {
@@ -129,7 +128,6 @@ const page = () => {
           </div>
         </div>
       </div>
-      <Marquee />
     </>
   );
 };

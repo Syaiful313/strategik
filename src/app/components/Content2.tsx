@@ -4,7 +4,29 @@ import Image from "next/image";
 import Link from "next/link";
 
 const Content2 = () => {
-  
+  const portfolioItems = [
+    {
+      src: "/assets/laptop.avif",
+      text: "E-commerce Triumh for Artisan.io",
+      link: "/blog/e-commerce-triumph",
+    },
+    {
+      src: "/assets/sosmed.avif",
+      text: "Social Media Magic for DevSprint",
+      link: "/blog/social-media-magic-for-devsprint",
+    },
+    {
+      src: "/assets/earphone.avif",
+      text: "Digital Storefront Makeover for UrbanCraft",
+      link: "/blog/digital-storefront-makeover-for-urbancraft",
+    },
+    {
+      src: "/assets/kursi.avif",
+      text: "Customer Engagement for FreshHarvest",
+      link: "/blog/customer-engagement-for-freshharvest",
+    },
+  ];
+
   return (
     <section className="bg-[#1A1A1A]">
       <div className="max-w-[100vw] bg-[#1A1A1A] p-4 text-white md:px-36 md:py-12">
@@ -37,48 +59,30 @@ const Content2 = () => {
           </div>
         </div>
 
-        <div className="mx-10 mt-10 grid grid-cols-1 p-0 md:mt-0 md:grid-cols-2">
-          {[
-            {
-              src: "/assets/laptop.avif",
-              text: "E-commerce Triumph for Artisan.io",
-              link: "/#",
-            },
-            {
-              src: "/assets/sosmed.avif",
-              text: "Social Media Magic for DevSprint",
-              link: "/#",
-            },
-            {
-              src: "/assets/earphone.avif",
-              text: "Digital Storefront Makeover for UrbanCraft",
-              link: "/#",
-            },
-            {
-              src: "/assets/kursi.avif",
-              text: "Customer Engagement for FreshHarvest",
-              link: "/#",
-            },
-          ].map((image, index) => (
-            <div key={index} className="group relative">
-              <Link href={image.link}>
-                <Image
-                  src={image.src}
-                  alt={`Laptop display ${index + 1}`}
-                  layout="responsive"
-                  width={700}
-                  height={475}
-                  className="w-full object-cover transition duration-300"
-                />
-                <div className="absolute inset-0 flex items-center justify-center bg-black/25 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <p className="rounded bg-opacity-50 p-4 text-3xl text-white">
-                    {image.text}
-                  </p>
+        <section className="bg-[#1A1A1A]">
+          <div className="max-w-[100vw] bg-[#1A1A1A] text-white md:px-12 md:py-12">
+            <div className="mx-5 mt-10 grid grid-cols-1 p-0 md:mt-0 md:grid-cols-2">
+              {portfolioItems.map((item, index) => (
+                <div key={index} className="group relative">
+                  <Link href={item.link}>
+                    <Image
+                      src={item.src}
+                      alt={`Portfolio item ${index + 1}`}
+                      width={700}
+                      height={475}
+                      className="w-full object-cover transition duration-300"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                      <p className="rounded bg-opacity-50 text-center text-sm md:text-3xl text-white">
+                        {item.text}
+                      </p>
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        </section>
 
         <div className="mx-4 mb-0 flex flex-col justify-between gap-6 px-4 py-20 text-start md:mx-10 md:flex-row md:items-center md:px-10">
           <div className="flex-1">
@@ -102,9 +106,6 @@ const Content2 = () => {
         </div>
       </div>
     </section>
-    
-    
-    
   );
 };
 

@@ -120,7 +120,6 @@ const page = () => {
           </div>
         </div>
       </section>
-      <Marquee />
     </>
   );
 };

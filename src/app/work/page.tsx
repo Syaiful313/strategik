@@ -3,7 +3,6 @@
 import axios from "axios";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import Marquee from "../components/Marquee";
 
 const page = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
@@ -80,7 +79,6 @@ const page = () => {
         </div>
       </section>
 
-      <Marquee />
     </>
   );
 };
