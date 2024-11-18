@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import {
   PiAsterisk,
@@ -9,95 +11,108 @@ import {
 
 const Footer = () => {
   return (
-    <footer className="bg-[#1A1A1A] text-white">
-      <div className="max-w-full mx-auto px-4 md:px-0 py-20 md:mx-10">
-        <div className="flex justify-between items-start mb-20">
-          <h2 className="text-5xl md:text-8xl font-bold tracking-tight">
-            LET'S GET STRATEGIK
+    <footer className="w-full bg-[#1A1A1A] text-white">
+      <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8 lg:py-20">
+        <div className="mb-12 flex flex-col items-start justify-between gap-8 lg:mb-20 lg:flex-row lg:items-center">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-6xl lg:text-8xl">
+            LET'S GET
+            <br className="block sm:hidden" /> STRATEGIK
           </h2>
-          <div className="circular-container">
-            <div className="circular-text">
+          
+          <div className="relative h-32 w-32 sm:h-40 sm:w-40">
+            <div className="absolute inset-0 animate-spin-slow">
               <svg viewBox="0 0 100 100" className="h-full w-full">
                 <path
                   id="circlePath"
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   fill="none"
                 />
-                <text className="text-[11px] md:text-[11px] font-medium fill-white">
+                <text className="fill-white text-xs font-medium">
                   <textPath href="#circlePath" startOffset="0">
-                    BOOK A CALL BOOK A CALL BOOK A CALL
+                    BOOK A CALL • BOOK A CALL • BOOK A CALL
                   </textPath>
                 </text>
               </svg>
             </div>
-            <div className="icon-center text-5xl md:text-7xl">
-              <Link href="/contact">
-                <PiAsterisk />
-              </Link>
-            </div>
+            <Link 
+              href="/contact"
+              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform hover:scale-110"
+            >
+              <PiAsterisk className="text-4xl sm:text-5xl lg:text-6xl" />
+            </Link>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr,2fr] gap-12">
-          <div>
-            <h3 className="text-3xl md:text-4xl mb-6">Strategik</h3>
-            <div className="flex gap-4">
-              <PiFacebookLogo className="w-7 h-7 text-[#e33a07] cursor-pointer" />
-              <PiInstagramLogo className="w-7 h-7 text-[#e33a07] cursor-pointer" />
-              <PiYoutubeLogo className="w-7 h-7 text-[#e33a07] cursor-pointer" />
-              <PiTiktokLogo className="w-7 h-7 text-[#e33a07] cursor-pointer" />
+        <div className="grid gap-12 lg:grid-cols-[1fr,2fr]">
+          <div className="space-y-6">
+            <h3 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+              Strategik
+            </h3>
+            <div className="flex gap-6">
+              <Link href="#" className="transition-transform hover:scale-110">
+                <PiFacebookLogo className="h-8 w-8 text-[#e33a07]" />
+              </Link>
+              <Link href="#" className="transition-transform hover:scale-110">
+                <PiInstagramLogo className="h-8 w-8 text-[#e33a07]" />
+              </Link>
+              <Link href="#" className="transition-transform hover:scale-110">
+                <PiYoutubeLogo className="h-8 w-8 text-[#e33a07]" />
+              </Link>
+              <Link href="#" className="transition-transform hover:scale-110">
+                <PiTiktokLogo className="h-8 w-8 text-[#e33a07]" />
+              </Link>
             </div>
           </div>
 
-          <div className="grid grid-cols-2 gap-7">
-            <div className="space-y-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-16">
+            <div className="space-y-4">
               <Link
                 href="/"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Home
               </Link>
               <Link
                 href="/about"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 About
               </Link>
               <Link
                 href="/team"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Teams
               </Link>
               <Link
                 href="/contact"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Contact
               </Link>
             </div>
-            <div className="space-y-3">
+            <div className="space-y-4">
               <Link
                 href="/services"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Services
               </Link>
               <Link
                 href="/services/social-media"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Social Media
               </Link>
               <Link
                 href="/services/e-commerce"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 E-commerce
               </Link>
               <Link
                 href="/services/websites"
-                className="block text-sm text-white hover:text-[#e33a07]"
+                className="block text-sm font-medium transition-colors hover:text-[#e33a07] sm:text-base"
               >
                 Websites
               </Link>

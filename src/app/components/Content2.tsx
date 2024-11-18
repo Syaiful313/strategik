@@ -28,78 +28,86 @@ const Content2 = () => {
   ];
 
   return (
-    <section className="bg-[#1A1A1A]">
-      <div className="max-w-[100vw] bg-[#1A1A1A] p-4 text-white md:px-36 md:py-12">
-        <h2 className="mb-8 mt-6 px-4 text-start text-3xl font-bold md:mb-16 md:mt-10 md:px-10 md:text-6xl">
+    <section className="w-full bg-[#1A1A1A]">
+      <div className="mx-auto max-w-7xl bg-[#1A1A1A] px-4 py-8 text-white sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-bold sm:text-4xl lg:text-6xl">
           WHY STRATEGIK?
         </h2>
 
-        <div className="flex flex-col space-y-8 px-4 md:my-32 md:flex-row md:space-x-8 md:space-y-0 md:px-10">
-          <div className="space-y-2">
-            <h3 className="pt-8 text-xl font-bold md:text-4xl">INNOVATIVE</h3>
-            <p className="text-xl text-gray-300 md:text-2xl">
+        <div className="mt-12 flex flex-col space-y-8 lg:mt-24 lg:flex-row lg:space-x-8 lg:space-y-0">
+          {/* Innovative Section */}
+          <div className="space-y-3 lg:flex-1">
+            <h3 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+              INNOVATIVE
+            </h3>
+            <p className="text-lg text-gray-300 sm:text-xl lg:text-2xl">
               Unleash award-winning ideas for a distinctive digital presence.
             </p>
           </div>
 
-          <div className="space-y-2 border-t-2 border-[#e33a07] md:border-l-2 md:border-t-0 md:border-[#e33a07] md:pl-8">
-            <h3 className="pt-8 text-xl font-bold md:text-4xl">STRATEGIC</h3>
-            <p className="text-xl text-gray-300 md:text-2xl">
-              Benefit from expertly crafted campaigns tailored to your brand's
-              goals.
-            </p>
+          {/* Strategic Section */}
+          <div className="border-t-2 border-[#e33a07] pt-8 lg:border-l-2 lg:border-t-0 lg:pl-8 lg:pt-0">
+            <div className="space-y-3 lg:flex-1">
+              <h3 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+                STRATEGIC
+              </h3>
+              <p className="text-lg text-gray-300 sm:text-xl lg:text-2xl">
+                Benefit from expertly crafted campaigns tailored to your brand's goals.
+              </p>
+            </div>
           </div>
 
-          <div className="space-y-2 border-t-2 border-[#e33a07] md:border-l-2 md:border-t-0 md:border-[#e33a07] md:pl-8">
-            <h3 className="pt-8 text-xl font-bold md:text-4xl">PERSONALIZED</h3>
-            <p className="text-xl text-gray-300 md:text-2xl">
-              Experience a collaborative partnership with tailored solutions
-              that resonate.
-            </p>
+          {/* Personalized Section */}
+          <div className="border-t-2 border-[#e33a07] pt-8 lg:border-l-2 lg:border-t-0 lg:pl-8 lg:pt-0">
+            <div className="space-y-3 lg:flex-1">
+              <h3 className="text-2xl font-bold sm:text-3xl lg:text-4xl">
+                PERSONALIZED
+              </h3>
+              <p className="text-lg text-gray-300 sm:text-xl lg:text-2xl">
+                Experience a collaborative partnership with tailored solutions that resonate.
+              </p>
+            </div>
           </div>
         </div>
 
-        <section className="bg-[#1A1A1A]">
-          <div className="max-w-[100vw] bg-[#1A1A1A] text-white md:px-12 md:py-12">
-            <div className="mx-5 mt-10 grid grid-cols-1 p-0 md:mt-0 md:grid-cols-2">
-              {portfolioItems.map((item, index) => (
-                <div key={index} className="group relative">
-                  <Link href={item.link}>
-                    <Image
-                      src={item.src}
-                      alt={`Portfolio item ${index + 1}`}
-                      width={700}
-                      height={475}
-                      className="w-full object-cover transition duration-300"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                      <p className="rounded bg-opacity-50 text-center text-sm md:text-3xl text-white">
-                        {item.text}
-                      </p>
-                    </div>
-                  </Link>
+        <div className="mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:mt-24">
+          {portfolioItems.map((item, index) => (
+            <div key={index} className="group relative overflow-hidden rounded-lg">
+              <Link href={item.link}>
+                <div className="aspect-w-16 aspect-h-9 relative">
+                  <Image
+                    src={item.src}
+                    alt={`Portfolio item ${index + 1}`}
+                    width={700}
+                    height={475}
+                    className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                    <p className="px-4 text-center text-base font-medium text-white sm:text-lg lg:text-2xl">
+                      {item.text}
+                    </p>
+                  </div>
                 </div>
-              ))}
+              </Link>
             </div>
-          </div>
-        </section>
+          ))}
+        </div>
 
-        <div className="mx-4 mb-0 flex flex-col justify-between gap-6 px-4 py-20 text-start md:mx-10 md:flex-row md:items-center md:px-10">
+        <div className="mt-16 flex flex-col items-start gap-8 rounded-lg bg-[#242424] p-6 lg:mt-24 lg:flex-row lg:items-center lg:p-8">
           <div className="flex-1">
-            <p className="text-2xl font-normal">
+            <p className="text-lg font-normal sm:text-xl lg:text-2xl">
               Their team of experts took my online presence to the next level,
-              <br />
               and the impact on my business has been remarkable.
             </p>
           </div>
 
-          <div className="mt-6 flex flex-col items-center md:mt-0 md:items-start">
+          <div className="flex items-center space-x-4">
             <img
               src="/assets/home1.avif"
               alt="User profile"
-              className="h-12 w-12 rounded-full border-2 border-gray-500"
+              className="h-12 w-12 rounded-full border-2 border-gray-500 object-cover"
             />
-            <p className="mt-3 rounded-md px-2 py-1 text-center text-sm font-medium md:text-left md:text-xl">
+            <p className="text-base font-medium sm:text-lg lg:text-xl">
               Matthew Smith from Uber
             </p>
           </div>
