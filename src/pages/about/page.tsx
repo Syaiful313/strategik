@@ -4,7 +4,7 @@ import axios from "axios";
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Marquee from "../components/Marquee";
+import Marquee from "../../components/Marquee";
 
 const page = () => {
   const [teamMembers, setTeamMembers] = useState<any[]>([]);
