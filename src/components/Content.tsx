@@ -1,54 +1,9 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import FadeInSection from "@/components/FadeInSection";
 import Image from "next/image";
 import Link from "next/link";
 import { PiAsterisk } from "react-icons/pi";
-
-interface FadeInSectionProps {
-  children: React.ReactNode;
-  delay?: number;
-}
-
-const FadeInSection = ({ children, delay = 0 }: FadeInSectionProps) => {
-  const [isVisible, setVisible] = useState(false);
-  const [hasAnimated, setHasAnimated] = useState(false);
-
-  const handleScroll = useCallback(() => {
-    if (hasAnimated) return;
-
-    const element = document.querySelector(`#fade-in-${delay}`);
-    if (!element) return;
-
-    const rect = element.getBoundingClientRect();
-    const threshold = window.innerHeight * 0.8;
-
-    if (rect.top < threshold) {
-      setVisible(true);
-      setHasAnimated(true);
-    }
-  }, [delay, hasAnimated]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
-
-  return (
-    <div
-      id={`fade-in-${delay}`}
-      className={`transform transition-all duration-1000 ${
-        isVisible
-          ? "translate-y-0 opacity-100"
-          : "translate-y-10 opacity-0"
-      }`}
-      style={{ transitionDelay: `${delay}ms` }}
-    >
-      {children}
-    </div>
-  );
-};
 
 const Content = () => {
   const services = [
@@ -94,29 +49,33 @@ const Content = () => {
               </FadeInSection>
             </div>
 
-            <div className="relative h-[120px] w-[120px]">
-              <div className="absolute inset-0 rounded-full border border-white/20" />
+            <div className="group relative h-[120px] w-[120px]">
+              <div className="absolute inset-0 rounded-full" />
               <div className="absolute inset-0">
-                <div className="relative h-full w-full animate-spin-slow">
-                  <svg viewBox="0 0 100 100" className="h-full w-full">
-                    <path
-                      id="circlePath"
-                      d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                      fill="none"
-                    />
-                    <text className="fill-white text-xs font-medium">
-                      <textPath href="#circlePath" startOffset="0">
-                        BOOK A CALL • BOOK A CALL • BOOK A CALL
-                      </textPath>
-                    </text>
-                  </svg>
-                </div>
-                <Link
-                  href="/contact"
-                  className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform hover:scale-110"
-                >
-                  <PiAsterisk className="text-5xl" />
-                </Link>
+                <FadeInSection>
+                  <div className="relative h-full w-full">
+                    <div className="group-hover:animate-rotate-once">
+                      <svg viewBox="0 0 100 100" className="h-full w-full">
+                        <path
+                          id="circlePath"
+                          d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
+                          fill="none"
+                        />
+                        <text className="fill-white text-xs font-medium" textLength="232">
+                          <textPath href="#circlePath" startOffset="0">
+                            BOOK A CALL • BOOK A CALL • BOOK A CALL •
+                          </textPath>
+                        </text>
+                      </svg>
+                    </div>
+                    <Link
+                      href="/contact"
+                      className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform hover:scale-110"
+                    >
+                      <PiAsterisk className="text-5xl text-[#e33a07]" />
+                    </Link>
+                  </div>
+                </FadeInSection>
               </div>
             </div>
           </div>

@@ -18,26 +18,23 @@ const Footer = () => {
             LET'S GET
             <br className="block sm:hidden" /> STRATEGIK
           </h2>
-          
-          <div className="relative h-32 w-32 sm:h-40 sm:w-40">
-            <div className="absolute inset-0 animate-spin-slow">
+
+          <div className="circular-container">
+            <div className="circular-text">
               <svg viewBox="0 0 100 100" className="h-full w-full">
                 <path
                   id="circlePath"
                   d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
                   fill="none"
                 />
-                <text className="fill-white text-xs font-medium">
+                <text className="fill-white text-xs font-medium" textLength="232">
                   <textPath href="#circlePath" startOffset="0">
-                    BOOK A CALL • BOOK A CALL • BOOK A CALL
+                    BOOK A CALL • BOOK A CALL • BOOK A CALL •
                   </textPath>
                 </text>
               </svg>
             </div>
-            <Link 
-              href="/contact"
-              className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform transition-transform hover:scale-110"
-            >
+            <Link href="/contact" className="icon-center">
               <PiAsterisk className="text-4xl sm:text-5xl lg:text-6xl" />
             </Link>
           </div>

@@ -20,16 +20,16 @@ const page = () => {
             <input
               type="text"
               placeholder="Name"
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none placeholder:text-lg"
+              className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
             />
             <input
               type="email"
               placeholder="Email"
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none placeholder:text-lg"
+              className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
             />
             <textarea
               placeholder="Message"
-              className="w-full px-4 py-2 bg-gray-700 text-white rounded-lg focus:outline-none placeholder:text-lg"
+              className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
               rows={4}
             ></textarea>
             <button
