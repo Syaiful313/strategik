@@ -4,7 +4,7 @@ import FadeInSection from "@/components/FadeInSection";
 import Image from "next/image";
 import Link from "next/link";
 
-const Content2 = () => {
+const AboutSection = () => {
   const portfolioItems = [
     {
       src: "/assets/laptop.avif",
@@ -139,4 +139,4 @@ const Content2 = () => {
   );
 };
 
-export default Content2;
+export default AboutSection;
