@@ -13,8 +13,8 @@ const HeroSection = () => {
   ];
 
   return (
-    <section className="min-h-screen bg-[#1A1A1A] text-white">
-      <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
+    <section className="w-full bg-[#1A1A1A] text-white">
+      <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6 lg:px-8">
         <div className="relative">
           <div className="pb-12 pt-8 sm:pb-16 sm:pt-12 lg:pb-24 lg:pt-16">
             <FadeInSection delay={200}>
@@ -52,7 +52,7 @@ const HeroSection = () => {
             <div className="group relative h-[120px] w-[120px]">
               <div className="absolute inset-0 rounded-full" />
               <div className="absolute inset-0">
-                <FadeInSection>
+                <FadeInSection delay={800}>
                   <div className="relative h-full w-full">
                     <div className="group-hover:animate-rotate-once">
                       <svg viewBox="0 0 100 100" className="h-full w-full">
