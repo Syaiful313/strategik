@@ -3,48 +3,50 @@ import Link from "next/link";
 
 export const Navbar = () => {
   return (
-    <nav className="border-gray-200 bg-black">
-      <div className="mx-auto flex max-w-screen-2xl flex-wrap items-center justify-between p-4">
-        <Link href="/">
-        <span className="self-center whitespace-nowrap text-3xl font-semibold md:text-5xl  dark:text-white">
-          Strategik.
-        </span>
-        </Link>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-          aria-controls="navbar-default"
-          aria-expanded="false"
-          onClick={() => {
-            document
-              .getElementById("navbar-default")!
-              .classList.toggle("hidden");
-          }}
-        >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="h-5 w-5"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 14"
+    <nav className="bg-black">
+      <div className="mx-auto max-w-6xl p-4 md:flex md:items-center md:justify-between">
+        <div className="flex items-center justify-between">
+          <Link href="/">
+            <span className="text-3xl font-semibold text-white md:text-5xl">
+              Strategik.
+            </span>
+          </Link>
+          <button
+            data-collapse-toggle="navbar-default"
+            type="button"
+            className="inline-flex items-center rounded-lg p-2 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-600 md:hidden"
+            aria-controls="navbar-default"
+            aria-expanded="false"
+            onClick={() => {
+              document
+                .getElementById("navbar-default")!
+                .classList.toggle("hidden");
+            }}
           >
-            <path
+            <span className="sr-only">Open main menu</span>
+            <svg
+              className="h-6 w-6"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
               stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              d="M1 1h15M1 7h15M1 13h15"
-            />
-          </svg>
-        </button>
-        <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-          <ul className="mt-4 flex flex-col bg-gray-50 p-4 font-medium md:mt-0 md:flex-row md:space-x-8 md:border-0 md:bg-white md:p-0 rtl:space-x-reverse dark:border-black dark:bg-black md:dark:bg-black">
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+        <div className="hidden md:block" id="navbar-default">
+          <ul className="mt-4 flex flex-col md:mt-0 md:flex-row md:space-x-8">
             <li>
               <Link
                 href="/"
-                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >
                 Home
               </Link>
@@ -52,7 +54,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/about"
-                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >
                 About
               </Link>
@@ -60,7 +62,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/services"
-                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >
                 Services
               </Link>
@@ -68,7 +70,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/team"
-                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >
                 Teams
               </Link>
@@ -76,7 +78,7 @@ export const Navbar = () => {
             <li>
               <Link
                 href="/contact"
-                className="block text-center rounded px-3 py-2 text-white hover:text-[#e33a07] md:p-0 md:text-2xl"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >
                 Contact
               </Link>
