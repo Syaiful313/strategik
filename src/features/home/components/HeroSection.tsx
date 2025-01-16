@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { PiAsterisk } from "react-icons/pi";
 
-const Content = () => {
+const HeroSection = () => {
   const services = [
     { title: "SOCIAL MEDIA", href: "/services/social-media" },
     { title: "E-COMMERCE", href: "/services/e-commerce" },
@@ -100,4 +100,4 @@ const Content = () => {
   );
 };
 
-export default Content;
+export default HeroSection;

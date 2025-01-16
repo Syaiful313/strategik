@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 
-const page = () => {
+const WebsitesPage = () => {
   return (
     <>
       <div className="min-h-screen bg-[#1A1A1A] px-24 text-white">
@@ -131,4 +131,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default WebsitesPage;
