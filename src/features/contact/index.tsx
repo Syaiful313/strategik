@@ -1,49 +1,58 @@
+import React from 'react';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Button } from '@/components/ui/button';
 
 const ContactPage = () => {
-    return (
-      <>
-        <section className="py-12 bg-[#1A1A1A] text-white text-center">
-          <div className="countainer mx-4 md:mx-auto max-w-6xl">
+  return (
+    <section className="py-20  bg-[#1A1A1A] text-white">
+      <div className="container mx-auto max-w-6xl px-4">
+        <div className="mb-16 text-center">
+          <h2 className="text-6xl md:text-8xl font-bold mb-6 tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-[#e33a07] to-[#ff6b3c]">
+            GET IN TOUCH
+          </h2>
+          <div className="h-1 w-32 bg-gradient-to-r from-[#e33a07] to-[#ff6b3c] mx-auto"></div>
+        </div>
+        <div className="mb-20 text-center">
+          <p className="text-white text-2xl md:text-3xl max-w-4xl mx-auto">
+            Lorem ipsum dolor sit amet consectetur. The fringed adornment
+            enhances the beauty of the alien. A distinctive resting
+            characteristic prevails.
+          </p>
+        </div>
+        <div className="max-w-3xl mx-auto">
+          <form className="grid grid-cols-1 gap-8">
             <div>
-              <h2 className="text-5xl md:text-9xl font-bold mb-4">GET IN TOUCH</h2>
-            </div>
-            <div>
-            <p className="text-white mb-24 text-1xl md:text-3xl">
-              Lorem ipsum dolor sit amet consectetur. The fringed adornment
-              enhances the beauty of the alien. A distinctive resting
-              characteristic prevails.
-            </p>
-            </div>
-          </div>
-          <div className="container mx-auto max-w-2xl px-4">
-            <form className="space-y-4">
-              <input
+              <Input
                 type="text"
                 placeholder="Name"
-                className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
+                className="w-full text-black text-xl bg-gray-200 focus:bg-gray-300 transition duration-300"
               />
-              <input
+            </div>
+            <div>
+              <Input
                 type="email"
                 placeholder="Email"
-                className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
+                className="w-full text-black text-xl bg-gray-200 focus:bg-gray-300 transition duration-300"
               />
-              <textarea
+            </div>
+            <div>
+              <Textarea
                 placeholder="Message"
-                className="w-full px-4 py-2 bg-[#f2f2f2] text-black rounded-lg focus:outline-none placeholder:text-lg"
-                rows={4}
-              ></textarea>
-              <button
-                type="submit"
-                className="w-full bg-[#e33a07] text-white py-2 rounded-lg font-bold hover:bg-red-600 transition"
-              >
+                className="w-full text-black text-xl bg-gray-200 focus:bg-gray-300 transition duration-300"
+                rows={8}
+              />
+            </div>
+            <div>
+              <Button type="submit" className="w-full bg-gradient-to-r from-[#e33a07] to-[#ff6b3c] text-2xl uppercase tracking-wider py-4 rounded-lg hover:from-[#ff6b3c] hover:to-[#e33a07] transition duration-300 transform hover:scale-105">
                 Submit
-              </button>
-            </form>
-          </div>
-        </section>
-      </>
-    );
-  };
-  
-  export default ContactPage;
-  
+              </Button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ContactPage;
