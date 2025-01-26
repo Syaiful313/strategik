@@ -1,4 +1,5 @@
 import { createClient, FieldsType } from "contentful";
+import { cache } from "react";
 
 interface ResponseEntry {
   sys: { id: string };
@@ -34,7 +35,7 @@ export const getEntries = async () => {
   }
 };
 
-export const getEntry = async (slug: string) => {
+export const getEntry = cache(async (slug: string) => {
   try {
     const entries = await getEntries();
     const response = entries?.filter((company) => company.slug === slug);
@@ -42,4 +43,4 @@ export const getEntry = async (slug: string) => {
   } catch (error) {
     console.log(error)
   }
-}
+})
