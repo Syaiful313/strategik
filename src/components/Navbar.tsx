@@ -69,6 +69,14 @@ export const Navbar = () => {
             </li>
             <li>
               <Link
+                href="/work"
+                className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
+              >
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link
                 href="/team"
                 className="block rounded-md px-3 py-2 text-xl font-medium text-white hover:bg-gray-700"
               >

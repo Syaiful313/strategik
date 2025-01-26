@@ -1,58 +1,45 @@
-
 import { createClient, FieldsType } from "contentful";
-interface responseEntry {
+
+interface ResponseEntry {
   sys: { id: string };
   fields: FieldsType;
 }
 
 const client = createClient({
   space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID!,
-  environment: process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONTMENT_ID!,
+  environment: process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT_ID!,
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
 });
 
-export const getEntries = async (page: number) => {
+export const getEntries = async () => {
   try {
-    const response = await client.getEntries({
-      content_type: "blogPost",
+    const res = await client.getEntries({
+      content_type: "companyProfile",
     });
 
-    const blogs = response.items.map((blog: responseEntry) => {
+    const companies = res.items.map((company: ResponseEntry) => {
       return {
-        entryId: blog.sys.id,
-        title: blog.fields.title,
-        description: blog.fields.description,
-        thumbnail: "https:" + blog.fields.thumbnail.fields.file.url,
-        author: blog.fields.author,
-        category: blog.fields.category,
-        createdAt: blog.fields.createdAt,
-        content: blog.fields.content,
+        entryId: company.sys.id,
+        title: company.fields.title,
+        slug: company.fields.slug,
+        description: company.fields.description,
+        thumbnail: "https:" + company.fields.thumbnail.fields.file.url,
+        content: company.fields.content,
       };
     });
 
-    return {
-      data: blogs,
-      meta: { total: response.total, limit: response.limit },
-    };
+    return companies;
   } catch (error) {
-    console.log(error);
+    console.error("Error fetching entries:", error);
   }
 };
 
-export const getEntry = async (entryId: string) => {
+export const getEntry = async (slug: string) => {
   try {
-    const { sys, fields }: responseEntry = await client.getEntry(entryId);
-    return {
-      entryId: sys.id,
-      title: fields.title,
-      description: fields.description,
-      thumbnail: "https:" + fields.thumbnail.fields.file.url,
-      author: fields.author,
-      category: fields.category,
-      createdAt: fields.createdAt,
-      content: fields.content,
-    };
+    const entries = await getEntries();
+    const response = entries?.filter((company) => company.slug === slug);
+    return response;
   } catch (error) {
-    console.log(error);
+    console.log(error)
   }
-};
+}
