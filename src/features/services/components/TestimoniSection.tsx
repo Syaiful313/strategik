@@ -1,3 +1,4 @@
+"use client";
 import FadeInSection from "@/components/FadeInSection";
 import Image from "next/image";
 
@@ -25,33 +26,29 @@ const TestimoniSection = () => {
   return (
     <section className="bg-[#1A1A1A] py-32 text-center">
       <div className="container max-w-screen-md px-7 md:mx-auto md:max-w-screen-lg md:px-4">
-        <FadeInSection>
+        <FadeInSection delay={200}>
           <h2 className="mb-12 text-4xl font-bold text-white md:text-6xl">
             What Our Clients Say
           </h2>
         </FadeInSection>
-        <FadeInSection>
+        <FadeInSection delay={400}>
           <div className="space-y-8 md:grid md:grid-cols-3 md:gap-8 md:space-y-0">
             {testimonials.map((testimonial, index) => (
               <div
                 key={index}
                 className="rounded-lg border border-white bg-[#1A1A1A] p-6 text-white"
               >
-                <FadeInSection>
-                  <Image
-                    src={testimonial.imageUrl}
-                    alt={testimonial.name}
-                    width={100}
-                    height={100}
-                    className="mx-auto mb-4 rounded-full object-cover"
-                  />
-                </FadeInSection>
-                <FadeInSection>
-                  <p className="text-md text-white md:text-lg">
-                    {testimonial.feedback}
-                  </p>
-                  <p className="mt-4 text-xl font-bold">{testimonial.name}</p>
-                </FadeInSection>
+                <Image
+                  src={testimonial.imageUrl}
+                  alt={testimonial.name}
+                  width={100}
+                  height={100}
+                  className="mx-auto mb-4 rounded-full object-cover"
+                />
+                <p className="text-md text-white md:text-lg">
+                  {testimonial.feedback}
+                </p>
+                <p className="mt-4 text-xl font-bold">{testimonial.name}</p>
               </div>
             ))}
           </div>

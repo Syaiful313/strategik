@@ -1,10 +1,10 @@
 "use client";
 import FadeInSection from "@/components/FadeInSection";
 import ProfileList from "@/components/ProfileList";
-import { getEntries } from "@/lib/contentful";
+import { getEntriesCompany } from "@/lib/contentful";
 
 const WorkPage = async () => {
-  const companies = await getEntries();
+  const companies = await getEntriesCompany();
 
   if (!companies) {
     return;
