@@ -56,7 +56,7 @@ const ServiceDetail: FC<ServiceDetailProps> = async ({ params }) => {
               />
             </div>
 
-            <div className="mx-auto max-w-4xl px-4 sm:px-6 md:mx-12 md:px-8">
+            <div className="mx-auto max-w-4xl px-4 md:pb-20 sm:px-6 md:mx-12 md:px-8">
               {documentToReactComponents(service.content2, RICHTEXT_SERVICE)}
             </div>
           </div>
