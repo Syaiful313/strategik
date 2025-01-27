@@ -12,7 +12,7 @@ const client = createClient({
   accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN!,
 });
 
-export const getEntries = async () => {
+export const getEntriesCompany = async () => {
   try {
     const res = await client.getEntries({
       content_type: "companyProfile",
@@ -35,12 +35,47 @@ export const getEntries = async () => {
   }
 };
 
-export const getEntry = cache(async (slug: string) => {
+export const getEntryCompany = cache(async (slug: string) => {
   try {
-    const entries = await getEntries();
+    const entries = await getEntriesCompany();
     const response = entries?.filter((company) => company.slug === slug);
     return response;
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
-})
+});
+
+export const getEntriesService = async () => {
+  try {
+    const res = await client.getEntries({
+      content_type: "services",
+    });
+
+    const services = res.items.map((service: ResponseEntry) => {
+      return {
+        entryId: service.sys.id,
+        title: service.fields.title,
+        slug: service.fields.slug,
+        desciption: service.fields.desciption,
+        thumbnail: "https:" + service.fields.thumbnail.fields.file.url,
+        content: service.fields.content,
+        thumbail2: "https:" + service.fields.thumbail2.fields.file.url,
+        content2: service.fields.content2,
+      };
+    });
+
+    return services;
+  } catch (error) {
+    console.error("Error fetching entries:", error);
+  }
+};
+
+export const getEntryService = cache(async (slug: string) => {
+  try {
+    const entries = await getEntriesService();
+    const response = entries?.filter((service) => service.slug === slug);
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+});

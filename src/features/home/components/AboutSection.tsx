@@ -3,10 +3,10 @@
 import FadeInSection from "@/components/FadeInSection";
 import ProfileList from "@/components/ProfileList";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { getEntries } from "@/lib/contentful";
+import { getEntriesCompany } from "@/lib/contentful";
 
 const AboutSection = async () => {
-  const companies = await getEntries();
+  const companies = await getEntriesCompany();
 
   if (!companies) {
     return;

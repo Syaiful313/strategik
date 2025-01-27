@@ -1,4 +1,4 @@
-import { getEntry } from "@/lib/contentful";
+import { getEntryCompany } from "@/lib/contentful";
 import { RICHTEXT_OPTIONS } from "@/lib/richtext-options";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import Image from "next/image";
@@ -8,7 +8,7 @@ interface WorkDetailProps {
   params: { slug: string };
 }
 const WorkDetail: FC<WorkDetailProps> = async ({ params }) => {
-  const companies = await getEntry(params.slug);
+  const companies = await getEntryCompany(params.slug);
 
   return (
     <>

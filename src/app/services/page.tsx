@@ -1,3 +1,4 @@
+"use client";
 import ServicesPage from "@/features/services";
 
 const Services = () => {
