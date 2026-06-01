@@ -1,4 +1,6 @@
-import React, { useEffect, useRef, useState } from 'react';
+"use client";
+
+import React, { useEffect, useRef, useState } from "react";
 
 interface ScrollRevealProps {
   children: React.ReactNode;
@@ -11,7 +13,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   children,
   threshold = 0.1,
   delay = 0,
-  className = '',
+  className = "",
 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const elementRef = useRef<HTMLDivElement>(null);
@@ -30,8 +32,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
       },
       {
         threshold: threshold,
-        rootMargin: '0px 0px -50px 0px' // Memicu sedikit lebih awal sebelum elemen masuk viewport
-      }
+        rootMargin: "0px 0px -50px 0px", // Memicu sedikit lebih awal sebelum elemen masuk viewport
+      },
     );
 
     if (elementRef.current) {
@@ -46,8 +48,8 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
   }, [threshold]);
 
   const animationClass = isVisible
-    ? 'opacity-100 translate-y-0'
-    : 'opacity-0 translate-y-16';
+    ? "opacity-100 translate-y-0"
+    : "opacity-0 translate-y-16";
 
   return (
     <div

@@ -1,5 +1,3 @@
-"use client";
-
 import FadeInSection from "@/components/FadeInSection";
 import ProfileList from "@/components/ProfileList";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,8 +6,8 @@ import { getEntriesCompany } from "@/lib/contentful";
 const AboutSection = async () => {
   const companies = await getEntriesCompany();
 
-  if (!companies) {
-    return;
+  if (companies.length === 0) {
+    return null;
   }
 
   const services = [

@@ -1,4 +1,3 @@
-"use client";
 import FadeInSection from "@/components/FadeInSection";
 import Marquee from "../../components/Marquee";
 import ServiceList from "./components/ServiceList";
@@ -8,8 +7,8 @@ import { getEntriesService } from "@/lib/contentful";
 const ServicesPage = async () => {
   const services = await getEntriesService();
 
-  if (!services) {
-    return;
+  if (services.length === 0) {
+    return null;
   }
 
   return (

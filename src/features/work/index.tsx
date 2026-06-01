@@ -1,4 +1,3 @@
-"use client";
 import FadeInSection from "@/components/FadeInSection";
 import ProfileList from "@/components/ProfileList";
 import { getEntriesCompany } from "@/lib/contentful";
@@ -6,8 +5,8 @@ import { getEntriesCompany } from "@/lib/contentful";
 const WorkPage = async () => {
   const companies = await getEntriesCompany();
 
-  if (!companies) {
-    return;
+  if (companies.length === 0) {
+    return null;
   }
 
   return (
