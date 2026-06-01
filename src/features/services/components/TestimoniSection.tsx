@@ -32,9 +32,9 @@ const TestimoniSection = () => {
         </FadeInSection>
         <FadeInSection delay={400}>
           <div className="space-y-8 md:grid md:grid-cols-3 md:gap-8 md:space-y-0">
-            {testimonials.map((testimonial, index) => (
+            {testimonials.map((testimonial) => (
               <div
-                key={index}
+                key={testimonial.name}
                 className="rounded-lg border border-white bg-[#1A1A1A] p-6 text-white"
               >
                 <Image

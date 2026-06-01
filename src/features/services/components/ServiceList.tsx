@@ -9,8 +9,8 @@ interface ServiceListProps {
 const ServiceList: FC<ServiceListProps> = ({ services }) => {
   return (
     <div className="space-y-12">
-      {services.map((service, index) => (
-        <ServiceDetail key={index} service={service} />
+      {services.map((service) => (
+        <ServiceDetail key={service.entryId} service={service} />
       ))}
     </div>
   );

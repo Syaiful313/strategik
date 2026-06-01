@@ -37,6 +37,7 @@ const AboutPage = () => {
     "Marketing Strategist",
     "Social Media Maven",
     "Creative Content Catalyst",
+    "Analytics Architect",
   ];
 
   return (
@@ -86,7 +87,13 @@ const AboutPage = () => {
 
             <div className="mt-10">
               <FadeInSection>
-                <img src="/assets/About.avif" alt="Person" />
+                <Image
+                  src="/assets/About.avif"
+                  alt="Person"
+                  width={1152}
+                  height={768}
+                  className="h-auto w-full"
+                />
               </FadeInSection>
             </div>
           </div>
@@ -146,16 +153,15 @@ const AboutPage = () => {
               <div className="team-grid grid grid-cols-3 gap-6 text-white md:mt-36">
                 {teamMembers.slice(0, 3).map((member, index) => (
                   <div
-                    key={index}
+                    key={member.login.uuid}
                     className="team-member rounded-md bg-[#2a2a2a] p-4"
                   >
                     <Image
-                      className="mx-auto mb-4 rounded-full grayscale filter"
+                      className="mx-auto mb-4 rounded-full object-cover grayscale filter"
                       src={member.picture.large}
                       alt={`${member.name.first} ${member.name.last}`}
                       width={128}
                       height={128}
-                      objectFit="cover"
                     />
                     <h2 className="text-xl font-semibold">{`${member.name.first} ${member.name.last}`}</h2>
                     <p>{customDescriptions[index]}</p>
@@ -165,19 +171,18 @@ const AboutPage = () => {
               <div className="team-grid mt-8 grid grid-cols-2 gap-6 text-white">
                 {teamMembers.slice(3, 6).map((member, index) => (
                   <div
-                    key={index}
+                    key={member.login.uuid}
                     className="team-member rounded-md bg-[#2a2a2a] p-4"
                   >
                     <Image
-                      className="mx-auto mb-4 rounded-full grayscale filter"
+                      className="mx-auto mb-4 rounded-full object-cover grayscale filter"
                       src={member.picture.large}
                       alt={`${member.name.first} ${member.name.last}`}
                       width={128}
                       height={128}
-                      objectFit="cover"
                     />
                     <h2 className="text-xl font-semibold">{`${member.name.first} ${member.name.last}`}</h2>
-                    <p>{customDescriptions[index]}</p>
+                    <p>{customDescriptions[index + 3]}</p>
                   </div>
                 ))}
               </div>

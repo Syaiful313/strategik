@@ -2,6 +2,7 @@ import FadeInSection from "@/components/FadeInSection";
 import ProfileList from "@/components/ProfileList";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { getEntriesCompany } from "@/lib/contentful";
+import Image from "next/image";
 
 const AboutSection = async () => {
   const companies = await getEntriesCompany();
@@ -89,8 +90,8 @@ const AboutSection = async () => {
         </FadeInSection>
 
         <div className="mt-12 grid grid-cols-1 gap-10 sm:grid-cols-2 lg:mt-20 lg:grid-cols-3 lg:gap-12">
-          {services.map((service, index) => (
-            <FadeInSection key={index}>
+          {services.map((service) => (
+            <FadeInSection key={service.title}>
               <Card className="h-full w-full bg-[#242424] text-white">
                 <div className="absolute left-0 top-0 h-2 w-2/3 bg-[#e33a07]"></div>
                 <CardHeader className="flex flex-col items-center pb-4">
@@ -127,9 +128,11 @@ const AboutSection = async () => {
             </div>
             <div className="mt-8 flex items-center space-x-6 md:ml-12 md:mt-0">
               <FadeInSection>
-                <img
+                <Image
                   src="/assets/home1.avif"
                   alt="User profile"
+                  width={64}
+                  height={64}
                   className="h-16 w-16 rounded-full object-cover"
                 />
               </FadeInSection>

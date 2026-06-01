@@ -14,7 +14,7 @@ export const RICHTEXT_OPTIONS: Options = {
       return <h3 className="my-5 text-lg font-bold md:text-4xl">{children}</h3>;
     },
     [BLOCKS.PARAGRAPH]: (_node, children) => {
-      return <p className="my-5md:my-10 md:text-1xl text-sm">{children}</p>;
+      return <p className="my-5 text-sm md:my-10 md:text-xl">{children}</p>;
     },
   },
 };

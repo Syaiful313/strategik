@@ -45,17 +45,16 @@ const TeamPage = () => {
           <div className="team-grid grid grid-cols-3 gap-6 text-white md:mt-36">
             {teamMembers.slice(0, 3).map((member, index) => (
               <div
-                key={index}
+                key={member.login.uuid}
                 className="team-member rounded-md bg-[#2a2a2a] p-4"
               >
                 <FadeInSection>
                   <Image
-                    className="mx-auto mb-4 rounded-full grayscale filter"
+                    className="mx-auto mb-4 rounded-full object-cover grayscale filter"
                     src={member.picture.large}
                     alt={`${member.name.first} ${member.name.last}`}
                     width={128}
                     height={128}
-                    objectFit="cover"
                   />
                 </FadeInSection>
                 <FadeInSection>
@@ -72,24 +71,23 @@ const TeamPage = () => {
             <div className="team-grid mt-8 grid grid-cols-3 gap-6 text-white">
               {teamMembers.slice(3, 6).map((member, index) => (
                 <div
-                  key={index}
+                  key={member.login.uuid}
                   className="team-member rounded-md bg-[#2a2a2a] p-4"
                 >
                   <FadeInSection>
                     <Image
-                      className="mx-auto mb-4 rounded-full grayscale filter"
+                      className="mx-auto mb-4 rounded-full object-cover grayscale filter"
                       src={member.picture.large}
                       alt={`${member.name.first} ${member.name.last}`}
                       width={128}
                       height={128}
-                      objectFit="cover"
                     />
                   </FadeInSection>
                   <FadeInSection>
                     <h2 className="text-xl font-semibold">{`${member.name.first} ${member.name.last}`}</h2>
                   </FadeInSection>
                   <FadeInSection>
-                    <p>{customDescriptions[index]}</p>
+                    <p>{customDescriptions[index + 3]}</p>
                   </FadeInSection>
                 </div>
               ))}

@@ -10,8 +10,8 @@ const ProfileList: FC<ProfileListProps> = ({ companies }) => {
   return (
     <section className="container mx-auto mt-8 px-4 md:mt-20">
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
-        {companies.map((company, index) => (
-          <ProfileCard key={index} company={company} />
+        {companies.map((company) => (
+          <ProfileCard key={company.entryId} company={company} />
         ))}
       </div>
     </section>

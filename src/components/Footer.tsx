@@ -7,6 +7,13 @@ import {
   PiYoutubeLogo,
 } from "react-icons/pi";
 
+const socialLinks = [
+  { label: "Facebook", Icon: PiFacebookLogo, href: "#" },
+  { label: "Instagram", Icon: PiInstagramLogo, href: "#" },
+  { label: "Youtube", Icon: PiYoutubeLogo, href: "#" },
+  { label: "Tiktok", Icon: PiTiktokLogo, href: "#" },
+];
+
 const Footer = () => {
   return (
     <footer className="relative w-full bg-black text-white">
@@ -65,16 +72,12 @@ const Footer = () => {
             </div>
             
             <div className="flex gap-8">
-              {[
-                { Icon: PiFacebookLogo, href: "#" },
-                { Icon: PiInstagramLogo, href: "#" },
-                { Icon: PiYoutubeLogo, href: "#" },
-                { Icon: PiTiktokLogo, href: "#" },
-              ].map(({ Icon, href }, index) => (
+              {socialLinks.map(({ label, Icon, href }) => (
                 <Link
-                  key={index}
+                  key={label}
                   href={href}
                   className="group relative"
+                  aria-label={label}
                 >
                   <span className="absolute -inset-3 -z-10 scale-50 rounded-full bg-white/5 opacity-0 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
                   <Icon className="h-6 w-6 text-white/60 transition-colors duration-300 group-hover:text-white" />
