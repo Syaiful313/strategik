@@ -1,4 +1,3 @@
-"use client";
 import { ServiceType } from "@/types/service";
 import ServiceDetail from "./ServiceDetail";
 import { FC } from "react";

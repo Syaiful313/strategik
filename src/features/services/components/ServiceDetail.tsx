@@ -1,4 +1,3 @@
-"use client";
 import FadeInSection from "@/components/FadeInSection";
 import { ServiceType } from "@/types/service";
 import Image from "next/image";

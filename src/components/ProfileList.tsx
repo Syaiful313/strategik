@@ -1,4 +1,3 @@
-"use client";
 import { Company } from "@/types/company";
 import ProfileCard from "./ProfileCard";
 import { FC } from "react";

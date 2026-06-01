@@ -1,4 +1,3 @@
-"use client";
 import FadeInSection from "@/components/FadeInSection";
 import { Card } from "@/components/ui/card";
 import { Company } from "@/types/company";
