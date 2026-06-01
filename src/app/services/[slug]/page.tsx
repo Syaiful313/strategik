@@ -2,12 +2,35 @@ import FadeInSection from "@/components/FadeInSection";
 import { getEntryService } from "@/lib/contentful";
 import { RICHTEXT_SERVICE } from "@/lib/richtext-service";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface ServiceDetailPageProps {
   params: { slug: string };
 }
+
+export const generateMetadata = async ({
+  params,
+}: ServiceDetailPageProps): Promise<Metadata> => {
+  const service = await getEntryService(params.slug);
+
+  if (!service) {
+    return {
+      title: "Service Not Found",
+    };
+  }
+
+  return {
+    title: service.title,
+    description: service.desciption,
+    openGraph: {
+      title: `${service.title} | Strategik`,
+      description: service.desciption,
+      images: service.thumbnail ? [{ url: service.thumbnail }] : undefined,
+    },
+  };
+};
 
 const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
   const service = await getEntryService(params.slug);
@@ -39,7 +62,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
             <div className="relative aspect-[1090/600] w-full max-w-[1090px]">
               <Image
                 src={service.thumbnail}
-                alt="thumbnail"
+                alt={`${service.title} service thumbnail`}
                 fill
                 className="rounded-lg object-cover object-center"
                 priority
@@ -57,7 +80,7 @@ const ServiceDetailPage = async ({ params }: ServiceDetailPageProps) => {
           <div className="relative mx-auto mb-8 aspect-[600/350] w-full max-w-[600px] md:mx-12 md:mb-12">
             <Image
               src={service.thumbail2}
-              alt="thumbnail"
+              alt={`${service.title} supporting visual`}
               fill
               className="rounded-lg object-cover object-center"
               priority

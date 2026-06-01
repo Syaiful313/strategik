@@ -1,12 +1,35 @@
 import { getEntryCompany } from "@/lib/contentful";
 import { RICHTEXT_OPTIONS } from "@/lib/richtext-options";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Metadata } from "next";
 import Image from "next/image";
 import { notFound } from "next/navigation";
 
 interface WorkDetailPageProps {
   params: { slug: string };
 }
+
+export const generateMetadata = async ({
+  params,
+}: WorkDetailPageProps): Promise<Metadata> => {
+  const company = await getEntryCompany(params.slug);
+
+  if (!company) {
+    return {
+      title: "Work Not Found",
+    };
+  }
+
+  return {
+    title: company.title,
+    description: company.description,
+    openGraph: {
+      title: `${company.title} | Strategik`,
+      description: company.description,
+      images: company.thumbnail ? [{ url: company.thumbnail }] : undefined,
+    },
+  };
+};
 
 const WorkDetailPage = async ({ params }: WorkDetailPageProps) => {
   const company = await getEntryCompany(params.slug);
@@ -27,7 +50,7 @@ const WorkDetailPage = async ({ params }: WorkDetailPageProps) => {
         <div className="relative h-[300px] overflow-hidden rounded-lg md:h-[600px]">
           <Image
             src={company.thumbnail}
-            alt="thumbnail"
+            alt={`${company.title} project thumbnail`}
             fill
             className="mt-5 object-cover md:mt-10"
           />
